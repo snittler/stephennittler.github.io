@@ -35,6 +35,28 @@
             color: white;
         }
 
+        .hero .container {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+        }
+
+        .hero-photo {
+            flex-shrink: 0;
+        }
+
+        .hero-photo img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255,255,255,0.2);
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
         .hero h1 {
             font-size: 2.75rem;
             font-weight: 700;
@@ -243,12 +265,27 @@
                 padding: 60px 0 40px;
             }
 
+            .hero .container {
+                flex-direction: column;
+                text-align: center;
+                gap: 24px;
+            }
+
+            .hero-photo img {
+                width: 140px;
+                height: 140px;
+            }
+
             .hero h1 {
                 font-size: 2rem;
             }
 
             .hero .tagline {
                 font-size: 1.1rem;
+            }
+
+            .hero .location {
+                justify-content: center;
             }
 
             .section-title {
@@ -265,9 +302,14 @@
 <body>
     <section class="hero">
         <div class="container">
-            <h1>Stephen Nittler</h1>
-            <p class="tagline">Energy Policy & Government Affairs Professional</p>
-            <p class="location">Columbia, Missouri</p>
+            <div class="hero-photo">
+                <img src="headshot.jpeg" alt="Stephen Nittler">
+            </div>
+            <div class="hero-text">
+                <h1>Stephen Nittler</h1>
+                <p class="tagline">Energy Policy & Government Affairs Professional</p>
+                <p class="location">Columbia, Missouri</p>
+            </div>
         </div>
     </section>
 
