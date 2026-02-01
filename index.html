@@ -83,10 +83,64 @@
             content: "📍";
         }
 
+        /* Key Terms Banner */
+        .key-terms {
+            background: #0f172a;
+            padding: 20px 0;
+            border-bottom: 2px solid #3b82f6;
+        }
+
+        .terms-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px 32px;
+            list-style: none;
+        }
+
+        .terms-list li {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #60a5fa;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Value Props Section */
+        .value-props {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .value-props ul {
+            list-style: none;
+        }
+
+        .value-props li {
+            padding: 16px 0;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 1.1rem;
+            color: #374151;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .value-props li:last-child {
+            border-bottom: none;
+        }
+
+        .value-props li::before {
+            content: "→";
+            color: #3b82f6;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
         /* About Section */
         .about {
             padding: 60px 0;
-            background: white;
+            background: #f8fafc;
         }
 
         .about p {
@@ -99,10 +153,10 @@
             margin-bottom: 0;
         }
 
-        /* Expertise Section */
-        .expertise {
+        /* Interactive Areas of Experience */
+        .experience-areas {
             padding: 60px 0;
-            background: #f8fafc;
+            background: white;
         }
 
         .section-title {
@@ -112,65 +166,82 @@
             color: #1a1a2e;
         }
 
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 24px;
+        .exp-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
         }
 
-        .expertise-item {
+        .exp-tab {
+            padding: 10px 20px;
+            border: 2px solid #e5e7eb;
             background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #64748b;
+            transition: all 0.2s;
+        }
+
+        .exp-tab:hover {
+            border-color: #3b82f6;
+            color: #3b82f6;
+        }
+
+        .exp-tab.active {
+            background: #3b82f6;
+            border-color: #3b82f6;
+            color: white;
+        }
+
+        .exp-content {
+            display: none;
+            background: #f8fafc;
             padding: 24px;
             border-radius: 12px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            animation: fadeIn 0.3s ease;
         }
 
-        .expertise-item h3 {
-            font-size: 1.1rem;
+        .exp-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .exp-content h3 {
+            font-size: 1.2rem;
             font-weight: 600;
-            margin-bottom: 8px;
             color: #1a1a2e;
+            margin-bottom: 12px;
         }
 
-        .expertise-item p {
-            font-size: 0.95rem;
+        .exp-content p {
+            color: #475569;
+            margin-bottom: 16px;
+        }
+
+        .exp-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .exp-content li {
+            padding: 8px 0;
             color: #64748b;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
         }
 
-        /* Experience Section */
-        .experience {
-            padding: 60px 0;
-            background: white;
-        }
-
-        .experience-item {
-            margin-bottom: 32px;
-            padding-bottom: 32px;
-            border-bottom: 1px solid #e5e7eb;
-        }
-
-        .experience-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-
-        .experience-item h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #1a1a2e;
-            margin-bottom: 4px;
-        }
-
-        .experience-item .company {
-            font-size: 1rem;
+        .exp-content li::before {
+            content: "•";
             color: #3b82f6;
-            margin-bottom: 8px;
-        }
-
-        .experience-item p {
-            font-size: 0.95rem;
-            color: #64748b;
+            font-weight: bold;
         }
 
         /* Education Section */
@@ -288,6 +359,12 @@
                 justify-content: center;
             }
 
+            .terms-list {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+
             .section-title {
                 font-size: 1.25rem;
             }
@@ -295,6 +372,15 @@
             .education-list li {
                 flex-direction: column;
                 align-items: flex-start;
+            }
+
+            .exp-tabs {
+                flex-direction: column;
+            }
+
+            .exp-tab {
+                width: 100%;
+                text-align: center;
             }
         }
     </style>
@@ -308,8 +394,29 @@
             <div class="hero-text">
                 <h1>Stephen Nittler</h1>
                 <p class="tagline">Energy Policy & Government Affairs Professional</p>
-                <p class="location">Columbia, Missouri</p>
+                <p class="location">Missouri and Illinois</p>
             </div>
+        </div>
+    </section>
+
+    <nav class="key-terms">
+        <ul class="terms-list">
+            <li>Transmission Development</li>
+            <li>Energy Policy</li>
+            <li>Community Engagement & Strategic Communication</li>
+            <li>Government & Regulatory Affairs</li>
+        </ul>
+    </nav>
+
+    <section class="value-props">
+        <div class="container">
+            <ul>
+                <li>Experienced government affairs professional and former campaign manager</li>
+                <li>Crafting strategic communications to champion American energy independence, affordable power, and robust infrastructure</li>
+                <li>Advancing community and stakeholder engagement</li>
+                <li>Master of Environmental Management, Duke University Nicholas School of the Environment alum</li>
+                <li>Pioneering innovative, market-driven solutions for America's energy security and critical infrastructure challenges</li>
+            </ul>
         </div>
     </section>
 
@@ -321,52 +428,75 @@
         </div>
     </section>
 
-    <section class="expertise">
+    <section class="experience-areas">
         <div class="container">
-            <h2 class="section-title">Areas of Expertise</h2>
-            <div class="expertise-grid">
-                <div class="expertise-item">
-                    <h3>Transmission & Grid</h3>
-                    <p>Large-scale transmission development, interconnection, FERC/DOE regulatory processes</p>
-                </div>
-                <div class="expertise-item">
-                    <h3>Government Affairs</h3>
-                    <p>Legislative strategy, regulatory navigation, policy development</p>
-                </div>
-                <div class="expertise-item">
-                    <h3>Stakeholder Engagement</h3>
-                    <p>Coalition building, community relations, landowner outreach</p>
-                </div>
-                <div class="expertise-item">
-                    <h3>Project Management</h3>
-                    <p>Complex multi-stakeholder initiatives, $1M+ budget oversight</p>
-                </div>
+            <h2 class="section-title">Areas of Experience</h2>
+            <div class="exp-tabs">
+                <button class="exp-tab active" data-tab="transmission">Transmission & Grid</button>
+                <button class="exp-tab" data-tab="government">Government Affairs</button>
+                <button class="exp-tab" data-tab="stakeholder">Stakeholder Engagement</button>
+                <button class="exp-tab" data-tab="campaigns">Campaigns & Political</button>
+                <button class="exp-tab" data-tab="project">Project Management</button>
             </div>
-        </div>
-    </section>
 
-    <section class="experience">
-        <div class="container">
-            <h2 class="section-title">Experience Highlights</h2>
-            <div class="experience-item">
-                <h3>Senior Associate, Transmission Public Affairs</h3>
-                <div class="company">Invenergy</div>
-                <p>Led strategic communication, outreach, and stakeholder engagement across Illinois, Indiana, Kansas, and Missouri for Grain Belt Express. Managed community relations programs, advocacy campaigns, and permitting/regulatory affairs for one of the nation's largest HVDC transmission projects.</p>
+            <div class="exp-content active" data-content="transmission">
+                <h3>Transmission & Grid Infrastructure</h3>
+                <p>Deep expertise in large-scale transmission development, from early-stage permitting through construction.</p>
+                <ul>
+                    <li>Led public affairs for Grain Belt Express, a multi-billion dollar HVDC transmission project</li>
+                    <li>FERC and DOE regulatory process navigation</li>
+                    <li>Interconnection and grid reliability advocacy</li>
+                    <li>Renewable energy integration and clean energy transmission</li>
+                    <li>Multi-state project coordination across Missouri, Illinois, Indiana, and Kansas</li>
+                </ul>
             </div>
-            <div class="experience-item">
-                <h3>Lobbyist</h3>
-                <div class="company">Hahn | O'Daniel Government Relations</div>
-                <p>Contract lobbyist representing technology, renewable energy, utility, and healthcare sector clients. Developed legislative and government affairs strategies, built relationships with executive, legislative, and advocacy stakeholders across Missouri.</p>
+
+            <div class="exp-content" data-content="government">
+                <h3>Government & Regulatory Affairs</h3>
+                <p>Former Chief of Staff and lobbyist with deep relationships across state government.</p>
+                <ul>
+                    <li>Legislative strategy development and bill tracking</li>
+                    <li>Executive branch and agency relations</li>
+                    <li>Regulatory filings and utility commission proceedings</li>
+                    <li>Policy development for energy, infrastructure, and economic development</li>
+                    <li>Coalition building with trade associations and advocacy groups</li>
+                </ul>
             </div>
-            <div class="experience-item">
-                <h3>Chief of Staff</h3>
-                <div class="company">Missouri State Senate</div>
-                <p>Directed all operations for a state Senator's office. Managed legislative priorities, constituent services, and staff. Developed policy positions on energy, infrastructure, and economic development.</p>
+
+            <div class="exp-content" data-content="stakeholder">
+                <h3>Stakeholder & Community Engagement</h3>
+                <p>Building relationships that turn opposition into support and communities into advocates.</p>
+                <ul>
+                    <li>Landowner outreach and easement negotiations</li>
+                    <li>Community relations programs and open houses</li>
+                    <li>Local government engagement and county approvals</li>
+                    <li>Strategic communications and media relations</li>
+                    <li>Crisis communications and reputation management</li>
+                </ul>
             </div>
-            <div class="experience-item">
-                <h3>Political & Campaign Leadership</h3>
-                <div class="company">Missouri House Campaign Committee & Legislature</div>
-                <p>Progressed from Field Staffer to Regional Director over four years. Concurrently served as Legislative Associate in the Missouri House of Representatives. Started career as Congressional Intern in the U.S. House.</p>
+
+            <div class="exp-content" data-content="campaigns">
+                <h3>Campaigns & Political Leadership</h3>
+                <p>Progressed from field staffer to regional director, managing winning campaigns and voter outreach.</p>
+                <ul>
+                    <li>Campaign management and strategic planning</li>
+                    <li>Voter contact programs and field operations</li>
+                    <li>Fundraising and donor relations</li>
+                    <li>Candidate recruitment and training</li>
+                    <li>Missouri House Campaign Committee leadership</li>
+                </ul>
+            </div>
+
+            <div class="exp-content" data-content="project">
+                <h3>Project Management</h3>
+                <p>Certified project manager with experience leading complex, multi-stakeholder initiatives.</p>
+                <ul>
+                    <li>$1M+ budget oversight and resource allocation</li>
+                    <li>Cross-functional team coordination</li>
+                    <li>Timeline and milestone management</li>
+                    <li>Vendor and contractor relationships</li>
+                    <li>Colorado State University Project Management Certificate</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -414,5 +544,21 @@
             <p>© 2026 Stephen Nittler</p>
         </div>
     </footer>
+
+    <script>
+        // Interactive tabs
+        document.querySelectorAll('.exp-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active from all tabs and content
+                document.querySelectorAll('.exp-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.exp-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active to clicked tab and corresponding content
+                tab.classList.add('active');
+                const contentId = tab.dataset.tab;
+                document.querySelector(`[data-content="${contentId}"]`).classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
