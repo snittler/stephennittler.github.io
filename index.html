@@ -28,6 +28,88 @@
             padding: 0 24px;
         }
 
+        /* Photo Slideshow */
+        .slideshow {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            background: #0a0a0a;
+        }
+
+        .slideshow-inner {
+            display: flex;
+            height: 100%;
+            transition: transform 0.8s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+        }
+
+        .slideshow-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .slideshow-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .slideshow-dot.active {
+            background: white;
+        }
+
+        .slideshow-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 15px 12px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            z-index: 10;
+            transition: background 0.3s;
+        }
+
+        .slideshow-nav:hover {
+            background: rgba(0,0,0,0.8);
+        }
+
+        .slideshow-nav.prev { left: 10px; }
+        .slideshow-nav.next { right: 10px; }
+
+        @media (max-width: 640px) {
+            .slideshow {
+                height: 250px;
+            }
+            .slideshow-nav {
+                padding: 10px 8px;
+                font-size: 1rem;
+            }
+        }
+
         /* Hero Section */
         .hero {
             padding: 80px 0 60px;
@@ -428,6 +510,37 @@
         </div>
     </section>
 
+    <!-- Photo Slideshow -->
+    <section class="slideshow" id="slideshow">
+        <div class="slideshow-inner" id="slideshow-inner">
+            <div class="slide"><img src="photos/photo01.jpg" alt="Adventure"></div>
+            <div class="slide"><img src="photos/photo02.jpg" alt="Adventure"></div>
+            <div class="slide"><img src="photos/photo03.jpg" alt="Adventure"></div>
+            <div class="slide"><img src="photos/photo04.jpg" alt="Adventure"></div>
+            <div class="slide"><img src="photos/photo05.jpg" alt="Adventure"></div>
+            <div class="slide"><img src="photos/photo06.jpg" alt="Adventure"></div>
+            <div class="slide"><img src="photos/photo07.jpg" alt="Adventure"></div>
+            <div class="slide"><img src="photos/photo08.jpg" alt="Adventure"></div>
+            <div class="slide"><img src="photos/photo09.jpg" alt="Adventure"></div>
+            <div class="slide"><img src="photos/photo10.jpg" alt="Adventure"></div>
+            <div class="slide"><img src="photos/photo11.jpg" alt="Adventure"></div>
+            <div class="slide"><img src="photos/photo12.jpg" alt="Adventure"></div>
+            <div class="slide"><img src="photos/photo13.jpg" alt="Adventure"></div>
+            <div class="slide"><img src="photos/photo14.jpg" alt="Adventure"></div>
+            <div class="slide"><img src="photos/photo15.jpg" alt="Adventure"></div>
+            <div class="slide"><img src="photos/photo16.jpg" alt="Adventure"></div>
+            <div class="slide"><img src="photos/photo17.jpg" alt="Adventure"></div>
+            <div class="slide"><img src="photos/photo18.jpg" alt="Adventure"></div>
+            <div class="slide"><img src="photos/photo19.jpg" alt="Adventure"></div>
+            <div class="slide"><img src="photos/photo20.jpg" alt="Adventure"></div>
+            <div class="slide"><img src="photos/photo21.jpg" alt="Adventure"></div>
+            <div class="slide"><img src="photos/photo22.jpg" alt="Adventure"></div>
+        </div>
+        <button class="slideshow-nav prev" onclick="prevSlide()">❮</button>
+        <button class="slideshow-nav next" onclick="nextSlide()">❯</button>
+        <div class="slideshow-dots" id="slideshow-dots"></div>
+    </section>
+
     <section class="experience-areas">
         <div class="container">
             <h2 class="section-title">Areas of Experience</h2>
@@ -559,6 +672,61 @@
                 document.querySelector(`[data-content="${contentId}"]`).classList.add('active');
             });
         });
+
+        // Slideshow
+        const totalSlides = 22;
+        let currentSlide = 0;
+        let autoPlayInterval;
+
+        function initSlideshow() {
+            const dotsContainer = document.getElementById('slideshow-dots');
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('span');
+                dot.className = 'slideshow-dot' + (i === 0 ? ' active' : '');
+                dot.onclick = () => goToSlide(i);
+                dotsContainer.appendChild(dot);
+            }
+            startAutoPlay();
+        }
+
+        function updateSlideshow() {
+            const inner = document.getElementById('slideshow-inner');
+            inner.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            document.querySelectorAll('.slideshow-dot').forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlideshow();
+            resetAutoPlay();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlideshow();
+            resetAutoPlay();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlideshow();
+            resetAutoPlay();
+        }
+
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(nextSlide, 4000);
+        }
+
+        function resetAutoPlay() {
+            clearInterval(autoPlayInterval);
+            startAutoPlay();
+        }
+
+        // Initialize slideshow on load
+        document.addEventListener('DOMContentLoaded', initSlideshow);
     </script>
 </body>
 </html>
