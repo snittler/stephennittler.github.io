@@ -28,86 +28,80 @@
             padding: 0 24px;
         }
 
-        /* Photo Slideshow */
-        .slideshow {
-            position: relative;
-            width: 100%;
-            height: 400px;
+        /* Infinite Marquee */
+        .marquee-section {
+            background: #0a0a0a;
+            padding: 30px 0;
             overflow: hidden;
-            background: #0a0a0a;
         }
 
-        .slideshow-inner {
+        .marquee {
             display: flex;
-            height: 100%;
-            transition: transform 0.8s ease-in-out;
+            gap: 20px;
+            animation: scroll 60s linear infinite;
+            width: max-content;
         }
 
-        .slide {
-            min-width: 100%;
-            height: 100%;
-            position: relative;
+        .marquee:hover {
+            animation-play-state: paused;
         }
 
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            background: #0a0a0a;
+        .marquee img {
+            height: 200px;
+            width: auto;
+            border-radius: 8px;
+            object-fit: cover;
         }
 
-        .slideshow-dots {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 8px;
-            z-index: 10;
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
-
-        .slideshow-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.4);
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .slideshow-dot.active {
-            background: white;
-        }
-
-        .slideshow-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0,0,0,0.5);
-            color: white;
-            border: none;
-            padding: 15px 12px;
-            cursor: pointer;
-            font-size: 1.2rem;
-            z-index: 10;
-            transition: background 0.3s;
-        }
-
-        .slideshow-nav:hover {
-            background: rgba(0,0,0,0.8);
-        }
-
-        .slideshow-nav.prev { left: 10px; }
-        .slideshow-nav.next { right: 10px; }
 
         @media (max-width: 640px) {
-            .slideshow {
-                height: 250px;
+            .marquee img {
+                height: 140px;
             }
-            .slideshow-nav {
-                padding: 10px 8px;
-                font-size: 1rem;
-            }
+        }
+
+        /* Masonry Grid */
+        .gallery-section {
+            padding: 60px 0;
+            background: #f0f0f0;
+        }
+
+        .gallery-section .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .masonry {
+            column-count: 4;
+            column-gap: 16px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .masonry img {
+            width: 100%;
+            margin-bottom: 16px;
+            border-radius: 8px;
+            display: block;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .masonry img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        @media (max-width: 900px) {
+            .masonry { column-count: 3; }
+        }
+
+        @media (max-width: 640px) {
+            .masonry { column-count: 2; }
         }
 
         /* Hero Section */
@@ -510,35 +504,33 @@
         </div>
     </section>
 
-    <!-- Photo Slideshow -->
-    <section class="slideshow" id="slideshow">
-        <div class="slideshow-inner" id="slideshow-inner">
-            <div class="slide"><img src="photos/photo01.jpg" alt="Adventure"></div>
-            <div class="slide"><img src="photos/photo02.jpg" alt="Adventure"></div>
-            <div class="slide"><img src="photos/photo03.jpg" alt="Adventure"></div>
-            <div class="slide"><img src="photos/photo04.jpg" alt="Adventure"></div>
-            <div class="slide"><img src="photos/photo05.jpg" alt="Adventure"></div>
-            <div class="slide"><img src="photos/photo06.jpg" alt="Adventure"></div>
-            <div class="slide"><img src="photos/photo07.jpg" alt="Adventure"></div>
-            <div class="slide"><img src="photos/photo08.jpg" alt="Adventure"></div>
-            <div class="slide"><img src="photos/photo09.jpg" alt="Adventure"></div>
-            <div class="slide"><img src="photos/photo10.jpg" alt="Adventure"></div>
-            <div class="slide"><img src="photos/photo11.jpg" alt="Adventure"></div>
-            <div class="slide"><img src="photos/photo12.jpg" alt="Adventure"></div>
-            <div class="slide"><img src="photos/photo13.jpg" alt="Adventure"></div>
-            <div class="slide"><img src="photos/photo14.jpg" alt="Adventure"></div>
-            <div class="slide"><img src="photos/photo15.jpg" alt="Adventure"></div>
-            <div class="slide"><img src="photos/photo16.jpg" alt="Adventure"></div>
-            <div class="slide"><img src="photos/photo17.jpg" alt="Adventure"></div>
-            <div class="slide"><img src="photos/photo18.jpg" alt="Adventure"></div>
-            <div class="slide"><img src="photos/photo19.jpg" alt="Adventure"></div>
-            <div class="slide"><img src="photos/photo20.jpg" alt="Adventure"></div>
-            <div class="slide"><img src="photos/photo21.jpg" alt="Adventure"></div>
-            <div class="slide"><img src="photos/photo22.jpg" alt="Adventure"></div>
+    <!-- Infinite Marquee -->
+    <section class="marquee-section">
+        <div class="marquee">
+            <img src="photos/photo01.jpg" alt="">
+            <img src="photos/photo02.jpg" alt="">
+            <img src="photos/photo03.jpg" alt="">
+            <img src="photos/photo04.jpg" alt="">
+            <img src="photos/photo05.jpg" alt="">
+            <img src="photos/photo06.jpg" alt="">
+            <img src="photos/photo07.jpg" alt="">
+            <img src="photos/photo08.jpg" alt="">
+            <img src="photos/photo09.jpg" alt="">
+            <img src="photos/photo10.jpg" alt="">
+            <img src="photos/photo11.jpg" alt="">
+            <!-- Duplicate for seamless loop -->
+            <img src="photos/photo01.jpg" alt="">
+            <img src="photos/photo02.jpg" alt="">
+            <img src="photos/photo03.jpg" alt="">
+            <img src="photos/photo04.jpg" alt="">
+            <img src="photos/photo05.jpg" alt="">
+            <img src="photos/photo06.jpg" alt="">
+            <img src="photos/photo07.jpg" alt="">
+            <img src="photos/photo08.jpg" alt="">
+            <img src="photos/photo09.jpg" alt="">
+            <img src="photos/photo10.jpg" alt="">
+            <img src="photos/photo11.jpg" alt="">
         </div>
-        <button class="slideshow-nav prev" onclick="prevSlide()">❮</button>
-        <button class="slideshow-nav next" onclick="nextSlide()">❯</button>
-        <div class="slideshow-dots" id="slideshow-dots"></div>
     </section>
 
     <section class="experience-areas">
@@ -634,6 +626,24 @@
         </div>
     </section>
 
+    <!-- Masonry Photo Gallery -->
+    <section class="gallery-section">
+        <h2 class="section-title">Adventures</h2>
+        <div class="masonry">
+            <img src="photos/photo12.jpg" alt="">
+            <img src="photos/photo13.jpg" alt="">
+            <img src="photos/photo14.jpg" alt="">
+            <img src="photos/photo15.jpg" alt="">
+            <img src="photos/photo16.jpg" alt="">
+            <img src="photos/photo17.jpg" alt="">
+            <img src="photos/photo18.jpg" alt="">
+            <img src="photos/photo19.jpg" alt="">
+            <img src="photos/photo20.jpg" alt="">
+            <img src="photos/photo21.jpg" alt="">
+            <img src="photos/photo22.jpg" alt="">
+        </div>
+    </section>
+
     <section class="contact">
         <div class="container">
             <h2>Let's Connect</h2>
@@ -662,71 +672,13 @@
         // Interactive tabs
         document.querySelectorAll('.exp-tab').forEach(tab => {
             tab.addEventListener('click', () => {
-                // Remove active from all tabs and content
                 document.querySelectorAll('.exp-tab').forEach(t => t.classList.remove('active'));
                 document.querySelectorAll('.exp-content').forEach(c => c.classList.remove('active'));
-                
-                // Add active to clicked tab and corresponding content
                 tab.classList.add('active');
                 const contentId = tab.dataset.tab;
                 document.querySelector(`[data-content="${contentId}"]`).classList.add('active');
             });
         });
-
-        // Slideshow
-        const totalSlides = 22;
-        let currentSlide = 0;
-        let autoPlayInterval;
-
-        function initSlideshow() {
-            const dotsContainer = document.getElementById('slideshow-dots');
-            for (let i = 0; i < totalSlides; i++) {
-                const dot = document.createElement('span');
-                dot.className = 'slideshow-dot' + (i === 0 ? ' active' : '');
-                dot.onclick = () => goToSlide(i);
-                dotsContainer.appendChild(dot);
-            }
-            startAutoPlay();
-        }
-
-        function updateSlideshow() {
-            const inner = document.getElementById('slideshow-inner');
-            inner.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
-            document.querySelectorAll('.slideshow-dot').forEach((dot, i) => {
-                dot.classList.toggle('active', i === currentSlide);
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % totalSlides;
-            updateSlideshow();
-            resetAutoPlay();
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-            updateSlideshow();
-            resetAutoPlay();
-        }
-
-        function goToSlide(index) {
-            currentSlide = index;
-            updateSlideshow();
-            resetAutoPlay();
-        }
-
-        function startAutoPlay() {
-            autoPlayInterval = setInterval(nextSlide, 4000);
-        }
-
-        function resetAutoPlay() {
-            clearInterval(autoPlayInterval);
-            startAutoPlay();
-        }
-
-        // Initialize slideshow on load
-        document.addEventListener('DOMContentLoaded', initSlideshow);
     </script>
 </body>
 </html>
