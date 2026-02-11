@@ -9,28 +9,28 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #e0e0e0;
+            background: #0a0a0a;
+            color: #e8e8e8;
             min-height: 100vh;
             padding: 2rem;
             line-height: 1.6;
         }
         .container { max-width: 800px; margin: 0 auto; }
-        a { color: #64b5f6; text-decoration: none; }
+        a { color: #f59e0b; text-decoration: none; }
         a:hover { text-decoration: underline; }
         .back { display: inline-block; margin-bottom: 2rem; font-size: 0.9rem; }
         h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #fff; }
-        .tagline { color: #90a4ae; margin-bottom: 2rem; font-size: 1.1rem; }
+        .tagline { color: #888; margin-bottom: 2rem; font-size: 1.1rem; }
         
         /* Research Foundation Section */
         .research-section {
-            background: rgba(100, 181, 246, 0.1);
-            border-left: 4px solid #64b5f6;
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid #f59e0b;
             padding: 1.5rem;
             margin-bottom: 2rem;
             border-radius: 0 8px 8px 0;
         }
-        .research-section h2 { color: #64b5f6; font-size: 1.3rem; margin-bottom: 1rem; }
+        .research-section h2 { color: #f59e0b; font-size: 1.3rem; margin-bottom: 1rem; }
         .killer-stat {
             font-size: 2.5rem;
             font-weight: bold;
@@ -40,27 +40,28 @@
         }
         .killer-stat-label {
             text-align: center;
-            color: #90a4ae;
+            color: #888;
             font-size: 0.95rem;
             margin-bottom: 1rem;
         }
         
         /* Root Causes */
         .root-causes {
-            background: rgba(255, 255, 255, 0.05);
+            background: #141414;
+            border: 1px solid #333;
             padding: 1.5rem;
             border-radius: 8px;
             margin: 1.5rem 0;
         }
         .root-causes h3 { color: #fff; margin-bottom: 1rem; font-size: 1.1rem; }
         .root-causes ol { padding-left: 1.5rem; }
-        .root-causes li { margin-bottom: 0.5rem; color: #b0bec5; }
+        .root-causes li { margin-bottom: 0.5rem; color: #888; }
         
         h2 { color: #fff; margin: 2rem 0 1rem; font-size: 1.4rem; }
-        h3 { color: #64b5f6; margin: 1.5rem 0 0.75rem; font-size: 1.1rem; }
+        h3 { color: #f59e0b; margin: 1.5rem 0 0.75rem; font-size: 1.1rem; }
         ul { list-style: none; margin: 1rem 0; }
         ul li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; }
-        ul li:before { content: "→"; position: absolute; left: 0; color: #64b5f6; }
+        ul li:before { content: "→"; position: absolute; left: 0; color: #f59e0b; }
         
         .stats {
             display: grid;
@@ -69,20 +70,20 @@
             margin: 2rem 0;
             text-align: center;
         }
-        .stat { background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; }
-        .stat-number { font-size: 1.8rem; font-weight: bold; color: #64b5f6; }
-        .stat-label { font-size: 0.8rem; color: #90a4ae; }
+        .stat { background: #141414; border: 1px solid #333; padding: 1rem; border-radius: 8px; }
+        .stat-number { font-size: 1.8rem; font-weight: bold; color: #f59e0b; }
+        .stat-label { font-size: 0.8rem; color: #888; }
         
         .cta {
-            background: #64b5f6;
-            color: #1a1a2e;
+            background: #f59e0b;
+            color: #0a0a0a;
             padding: 1rem 2rem;
             border-radius: 8px;
             display: inline-block;
             font-weight: bold;
             margin-top: 2rem;
         }
-        .cta:hover { background: #90caf9; text-decoration: none; }
+        .cta:hover { background: #fbbf24; text-decoration: none; }
         
         @media (max-width: 600px) {
             .stats { grid-template-columns: repeat(2, 1fr); }
