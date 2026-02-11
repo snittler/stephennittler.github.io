@@ -4,202 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stephen Nittler</title>
-    <meta name="description" content="Stephen Nittler — Founder of The Daily Mine, energy news and data platform.">
-    <meta property="og:title" content="Stephen Nittler">
-    <meta property="og:description" content="Founder of The Daily Mine — energy news, data centers, and grid policy.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://stephennittler.com">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@StephenNittler">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
-            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0a0a0a;
-            color: #e8e8e8;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 40px 20px;
-        }
-
-        .card {
-            max-width: 480px;
-            width: 100%;
-            text-align: center;
-        }
-
-        .avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 3px solid #f59e0b;
-            margin: 0 auto 24px;
-            overflow: hidden;
-        }
-
-        .avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        h1 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-            letter-spacing: -0.5px;
-        }
-
-        .tagline {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.85rem;
-            color: #f59e0b;
-            margin-bottom: 20px;
-        }
-
-        .bio {
-            font-size: 0.95rem;
-            color: #888;
+            padding: 2rem;
             line-height: 1.6;
-            margin-bottom: 30px;
         }
-
-        /* Currently Building */
-        .building {
-            background: #141414;
-            border: 1px solid #222;
-            padding: 18px 22px;
-            margin-bottom: 26px;
-            text-align: left;
-        }
-
-        .building-label {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #666;
-            margin-bottom: 8px;
-        }
-
-        .building h3 a {
-            color: #f59e0b;
-            text-decoration: none;
+        .container { max-width: 600px; text-align: center; }
+        h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #fff; }
+        .tagline { color: #64b5f6; font-size: 1.1rem; margin-bottom: 1.5rem; }
+        .bio { 
+            color: #b0bec5; 
+            margin-bottom: 2rem; 
             font-size: 1rem;
+            line-height: 1.7;
         }
-
-        .building h3 a:hover { text-decoration: underline; }
-
-        .building p {
-            font-size: 0.85rem;
-            color: #888;
-            line-height: 1.5;
-            margin-top: 4px;
+        .bio strong { color: #fff; }
+        
+        .current { margin-bottom: 2rem; }
+        .current h3 { color: #90a4ae; font-size: 0.9rem; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+        .project {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
         }
-
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
+        .project a { color: #64b5f6; font-weight: bold; text-decoration: none; font-size: 1.1rem; }
+        .project a:hover { text-decoration: underline; }
+        .project p { color: #90a4ae; font-size: 0.9rem; margin-top: 0.25rem; }
+        
+        .links { display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-bottom: 2rem; }
         .links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 14px 20px;
-            background: #141414;
-            border: 1px solid #282828;
-            color: #e8e8e8;
+            background: rgba(100, 181, 246, 0.15);
+            color: #64b5f6;
+            padding: 0.6rem 1rem;
+            border-radius: 6px;
             text-decoration: none;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: all 0.15s;
+            font-size: 0.9rem;
+            transition: background 0.2s;
         }
-
-        .links a:hover {
-            border-color: #f59e0b;
-            color: #f59e0b;
-        }
-
-        .links a.primary {
-            background: #f59e0b;
-            border-color: #f59e0b;
-            color: #0a0a0a;
-            font-weight: 600;
-        }
-
-        .links a.primary:hover {
-            background: #fbbf24;
-            border-color: #fbbf24;
-        }
-
-        .details {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.75rem;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        .footer-note {
-            font-size: 0.7rem;
-            color: #444;
-            font-family: 'IBM Plex Mono', monospace;
-        }
-
-        @media (max-width: 480px) {
-            h1 { font-size: 1.5rem; }
-            .avatar { width: 100px; height: 100px; }
-            .details { gap: 12px; font-size: 0.7rem; }
-        }
+        .links a:hover { background: rgba(100, 181, 246, 0.3); }
+        
+        .footer { color: #546e7a; font-size: 0.85rem; }
+        .footer p { margin: 0.25rem 0; }
     </style>
 </head>
 <body>
-    <div class="card">
-        <div class="avatar">
-            <img src="headshot.jpeg" alt="Stephen Nittler" width="120" height="120">
-        </div>
-
+    <div class="container">
         <h1>Stephen Nittler</h1>
         <p class="tagline">Founder, The Daily Mine ⛏️</p>
-
+        
         <p class="bio">
-            Policy guy turned entrepreneur. Building the energy news platform I wanted to read — covering data centers, grid infrastructure, and the policy shaping America's energy future.
+            My Duke research focused on <strong>why energy projects fail due to community opposition and how to fix it.</strong> 
+            I spent a decade in energy policy and transmission development — including three years on the Grain Belt Express. 
+            Now I'm building the energy news platform I wanted to read.
         </p>
-
-        <div class="building">
-            <div class="building-label">Currently Building</div>
-            <h3><a href="https://thedailymine.co">⛏️ The Daily Mine</a></h3>
-            <p>Energy news, data centers, and grid policy — curated daily from top-tier sources.</p>
+        
+        <div class="current">
+            <h3>Currently Building</h3>
+            <div class="project">
+                <a href="https://thedailymine.co">⛏️ The Daily Mine</a>
+                <p>Energy news, data centers, and grid policy — curated daily from top-tier sources.</p>
+            </div>
         </div>
-
+        
         <div class="links">
-            <a href="https://thedailymine.co" class="primary">⛏️ The Daily Mine</a>
+            <a href="https://thedailymine.co">⛏️ The Daily Mine</a>
             <a href="consulting.html">📋 Consulting Services</a>
             <a href="https://www.linkedin.com/in/stephen-nittler/">💼 LinkedIn</a>
             <a href="https://x.com/StephenNittler">𝕏 @StephenNittler</a>
             <a href="mailto:stephen.nittler@gmail.com">📬 Get in Touch</a>
         </div>
-
-        <div class="details">
-            <span>🎓 @Duke · @Mizzou</span>
-            <span>📍 Columbia, MO</span>
+        
+        <div class="footer">
+            <p>🎓 @Duke · @Mizzou</p>
+            <p>📍 Columbia, MO</p>
+            <p style="margin-top: 1rem;">© 2026 Stephen Nittler</p>
         </div>
-
-        <p class="footer-note">© 2026 Stephen Nittler</p>
     </div>
 </body>
 </html>

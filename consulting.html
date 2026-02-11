@@ -4,295 +4,191 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulting | Stephen Nittler</title>
-    <meta name="description" content="Energy policy and government affairs consulting services from Stephen Nittler. Transmission development, regulatory strategy, stakeholder engagement.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
-            font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #0a0a0a;
-            color: #e8e8e8;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e0e0e0;
             min-height: 100vh;
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 680px;
-            margin: 0 auto;
-        }
-
-        a { color: #f59e0b; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-
-        .back {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.8rem;
-            display: inline-block;
-            margin-bottom: 40px;
-        }
-
-        header {
-            margin-bottom: 50px;
-        }
-
-        header h1 {
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-        }
-
-        header .tagline {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.85rem;
-            color: #f59e0b;
-        }
-
-        section {
-            margin-bottom: 50px;
-        }
-
-        h2 {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .service-card {
-            background: #141414;
-            border: 1px solid #222;
-            padding: 24px;
-            margin-bottom: 16px;
-        }
-
-        .service-card h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #f59e0b;
-            margin-bottom: 10px;
-        }
-
-        .service-card p {
-            font-size: 0.9rem;
-            color: #888;
+            padding: 2rem;
             line-height: 1.6;
-            margin-bottom: 14px;
         }
-
-        .service-card ul {
-            list-style: none;
+        .container { max-width: 800px; margin: 0 auto; }
+        a { color: #64b5f6; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .back { display: inline-block; margin-bottom: 2rem; font-size: 0.9rem; }
+        h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #fff; }
+        .tagline { color: #90a4ae; margin-bottom: 2rem; font-size: 1.1rem; }
+        
+        /* Research Foundation Section */
+        .research-section {
+            background: rgba(100, 181, 246, 0.1);
+            border-left: 4px solid #64b5f6;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 0 8px 8px 0;
         }
-
-        .service-card li {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.8rem;
-            color: #aaa;
-            padding: 6px 0;
-            padding-left: 18px;
-            position: relative;
+        .research-section h2 { color: #64b5f6; font-size: 1.3rem; margin-bottom: 1rem; }
+        .killer-stat {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff6b6b;
+            text-align: center;
+            margin: 1rem 0;
         }
-
-        .service-card li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #f59e0b;
+        .killer-stat-label {
+            text-align: center;
+            color: #90a4ae;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
         }
-
+        
+        /* Root Causes */
+        .root-causes {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .root-causes h3 { color: #fff; margin-bottom: 1rem; font-size: 1.1rem; }
+        .root-causes ol { padding-left: 1.5rem; }
+        .root-causes li { margin-bottom: 0.5rem; color: #b0bec5; }
+        
+        h2 { color: #fff; margin: 2rem 0 1rem; font-size: 1.4rem; }
+        h3 { color: #64b5f6; margin: 1.5rem 0 0.75rem; font-size: 1.1rem; }
+        ul { list-style: none; margin: 1rem 0; }
+        ul li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; }
+        ul li:before { content: "→"; position: absolute; left: 0; color: #64b5f6; }
+        
         .stats {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 16px;
-            margin-bottom: 40px;
-        }
-
-        .stat {
-            background: #141414;
-            border: 1px solid #222;
-            padding: 20px;
+            gap: 1rem;
+            margin: 2rem 0;
             text-align: center;
         }
-
-        .stat .number {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 2rem;
-            font-weight: 600;
-            color: #f59e0b;
-        }
-
-        .stat .label {
-            font-size: 0.75rem;
-            color: #666;
-            margin-top: 4px;
-        }
-
-        .bio-text {
-            font-size: 0.95rem;
-            color: #888;
-            line-height: 1.7;
-            margin-bottom: 16px;
-        }
-
+        .stat { background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; }
+        .stat-number { font-size: 1.8rem; font-weight: bold; color: #64b5f6; }
+        .stat-label { font-size: 0.8rem; color: #90a4ae; }
+        
         .cta {
-            background: #141414;
-            border: 1px solid #f59e0b;
-            padding: 40px;
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .cta h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .cta p {
-            color: #888;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
-
-        .cta a.button {
+            background: #64b5f6;
+            color: #1a1a2e;
+            padding: 1rem 2rem;
+            border-radius: 8px;
             display: inline-block;
-            background: #f59e0b;
-            color: #0a0a0a;
-            padding: 14px 32px;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-decoration: none;
+            font-weight: bold;
+            margin-top: 2rem;
         }
-
-        .cta a.button:hover {
-            background: #fbbf24;
-        }
-
-        footer {
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 1px solid #222;
-            text-align: center;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.75rem;
-            color: #444;
-        }
-
-        footer a {
-            color: #666;
-            margin: 0 10px;
-        }
-
-        @media (max-width: 640px) {
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            header h1 { font-size: 1.6rem; }
+        .cta:hover { background: #90caf9; text-decoration: none; }
+        
+        @media (max-width: 600px) {
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            .killer-stat { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <a href="index.html" class="back">← Back</a>
-
-        <header>
-            <h1>Consulting Services</h1>
-            <p class="tagline">Energy policy • Government affairs • Strategic advisory</p>
-        </header>
-
-        <section>
-            <h2>How I Can Help</h2>
-
-            <div class="service-card">
-                <h3>Transmission Development Strategy</h3>
-                <p>Navigate the complex landscape of interstate transmission projects. I've worked on multi-state high-voltage projects through every phase — from siting to regulatory approval.</p>
-                <ul>
-                    <li>Route analysis and siting strategy</li>
-                    <li>State regulatory filings (CPCN, public convenience)</li>
-                    <li>RTO interconnection processes</li>
-                    <li>Multi-state coordination</li>
-                </ul>
+        
+        <h1>Consulting Services</h1>
+        <p class="tagline">Energy policy • Government affairs • Strategic advisory</p>
+        
+        <!-- Research Foundation -->
+        <div class="research-section">
+            <h2>🎓 Research-Backed Expertise</h2>
+            <p>My Duke University research focused on <strong>why energy projects fail due to community opposition — and how to fix it.</strong></p>
+            
+            <div class="killer-stat">Only 13%</div>
+            <p class="killer-stat-label">of projects stopped by organized opposition are ever completed</p>
+            
+            <p>I studied dozens of transmission and generation projects to identify the patterns that separate successful developers from failed ones.</p>
+            
+            <div class="root-causes">
+                <h3>The 7 Root Causes of Project Failure</h3>
+                <ol>
+                    <li><strong>Late engagement</strong> — Communities learn about projects from opponents first</li>
+                    <li><strong>Benefits disconnect</strong> — Local costs, distant benefits</li>
+                    <li><strong>Trust deficit</strong> — Developer credibility not established early</li>
+                    <li><strong>Information vacuum</strong> — Opponents fill the void with misinformation</li>
+                    <li><strong>Process blindness</strong> — Underestimating regulatory/political complexity</li>
+                    <li><strong>Coalition gaps</strong> — No local champions to counter opposition</li>
+                    <li><strong>Escalation failures</strong> — Problems fester until they're crises</li>
+                </ol>
             </div>
-
-            <div class="service-card">
-                <h3>Government Affairs & Advocacy</h3>
-                <p>Build and execute legislative strategies that move the needle. My background includes direct lobbying, coalition building, and working both sides of the aisle.</p>
-                <ul>
-                    <li>State legislative strategy</li>
-                    <li>Regulatory engagement (FERC, state PUCs)</li>
-                    <li>Coalition development</li>
-                    <li>Political landscape analysis</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <h3>Stakeholder Engagement</h3>
-                <p>Turn opponents into advocates. I've managed community relations for contentious infrastructure projects across the Midwest.</p>
-                <ul>
-                    <li>Community outreach strategy</li>
-                    <li>Landowner relations</li>
-                    <li>Public meeting facilitation</li>
-                    <li>Opposition research and response</li>
-                </ul>
-            </div>
-
-            <div class="service-card">
-                <h3>Strategic Advisory</h3>
-                <p>Cut through the noise with clear-eyed analysis. Market entry, regulatory risk, competitive intelligence.</p>
-                <ul>
-                    <li>Market entry analysis</li>
-                    <li>Policy impact assessment</li>
-                    <li>Regulatory risk evaluation</li>
-                    <li>Competitive intelligence</li>
-                </ul>
-            </div>
-        </section>
-
-        <section>
-            <h2>Track Record</h2>
-            <div class="stats">
-                <div class="stat">
-                    <div class="number">4+</div>
-                    <div class="label">States</div>
-                </div>
-                <div class="stat">
-                    <div class="number">10+</div>
-                    <div class="label">Years experience</div>
-                </div>
-                <div class="stat">
-                    <div class="number">$1M+</div>
-                    <div class="label">Budget oversight</div>
-                </div>
-                <div class="stat">
-                    <div class="number">4+</div>
-                    <div class="label">Sectors</div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Background</h2>
-            <p class="bio-text">I spent three years at Invenergy as Senior Associate of Transmission Public Affairs, leading government affairs and stakeholder engagement for multi-state transmission projects.</p>
-            <p class="bio-text">Before that, I served as Chief of Staff in the Missouri Senate, worked as a government affairs professional at a Jefferson City lobbying firm, and managed political campaigns.</p>
-            <p class="bio-text">I hold a Master of Environmental Management from Duke University and a BA in Political Science from the University of Missouri.</p>
-        </section>
-
-        <div class="cta">
-            <h3>Let's Talk</h3>
-            <p>Available for project or retainer engagements.</p>
-            <a href="mailto:stephen.nittler@gmail.com" class="button">Get in Touch</a>
+            
+            <p>This research shapes every engagement — I know what kills projects before the first shovel hits the ground.</p>
         </div>
-
-        <footer>
-            <a href="index.html">Home</a>
-            <a href="https://linkedin.com/in/stephen-nittler">LinkedIn</a>
-            <a href="https://thedailymine.co">The Daily Mine</a>
-        </footer>
+        
+        <h2>How I Can Help</h2>
+        
+        <h3>Transmission Development Strategy</h3>
+        <p>Navigate the complex landscape of interstate transmission projects. I've worked on multi-state high-voltage projects through every phase — from siting to regulatory approval.</p>
+        <ul>
+            <li>Route analysis and siting strategy</li>
+            <li>State regulatory filings (CPCN, public convenience)</li>
+            <li>RTO interconnection processes</li>
+            <li>Multi-state coordination</li>
+        </ul>
+        
+        <h3>Government Affairs & Advocacy</h3>
+        <p>Build and execute legislative strategies that move the needle. My background includes direct lobbying, coalition building, and working both sides of the aisle.</p>
+        <ul>
+            <li>State legislative strategy</li>
+            <li>Regulatory engagement (FERC, state PUCs)</li>
+            <li>Coalition development</li>
+            <li>Political landscape analysis</li>
+        </ul>
+        
+        <h3>Stakeholder Engagement</h3>
+        <p>Turn opponents into advocates. I've managed community relations for contentious infrastructure projects across the Midwest.</p>
+        <ul>
+            <li>Community outreach strategy</li>
+            <li>Landowner relations</li>
+            <li>Public meeting facilitation</li>
+            <li>Opposition research and response</li>
+        </ul>
+        
+        <h3>Strategic Advisory</h3>
+        <p>Cut through the noise with clear-eyed analysis. Market entry, regulatory risk, competitive intelligence.</p>
+        <ul>
+            <li>Market entry analysis</li>
+            <li>Policy impact assessment</li>
+            <li>Regulatory risk evaluation</li>
+            <li>Competitive intelligence</li>
+        </ul>
+        
+        <h2>Track Record</h2>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">4+</div>
+                <div class="stat-label">States</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Years experience</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">$1M+</div>
+                <div class="stat-label">Budget oversight</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">4+</div>
+                <div class="stat-label">Sectors</div>
+            </div>
+        </div>
+        
+        <h2>Background</h2>
+        <p>I spent three years at Invenergy as Senior Associate of Transmission Public Affairs, leading government affairs and stakeholder engagement for multi-state transmission projects.</p>
+        <p style="margin-top: 1rem;">Before that, I served as Chief of Staff in the Missouri Senate, worked as a government affairs professional at a Jefferson City lobbying firm, and managed political campaigns.</p>
+        <p style="margin-top: 1rem;">I hold a Master of Environmental Management from Duke University and a BA in Political Science from the University of Missouri.</p>
+        
+        <h3>Let's Talk</h3>
+        <p>Available for project or retainer engagements.</p>
+        <a href="mailto:stephen.nittler@gmail.com" class="cta">Get in Touch</a>
     </div>
 </body>
 </html>
