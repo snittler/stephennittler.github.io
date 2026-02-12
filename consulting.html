@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulting | Stephen Nittler</title>
+    <meta name="description" content="Energy policy consulting, government affairs, and strategic advisory services for transmission and infrastructure projects.">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #0a0a0a;
@@ -15,119 +17,307 @@
             padding: 2rem;
             line-height: 1.6;
         }
-        .container { max-width: 800px; margin: 0 auto; }
-        a { color: #f59e0b; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .back { display: inline-block; margin-bottom: 2rem; font-size: 0.9rem; }
-        h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #fff; }
-        .tagline { color: #888; margin-bottom: 2rem; font-size: 1.1rem; }
         
-        /* Research Foundation Section */
+        .container { 
+            max-width: 720px; 
+            margin: 0 auto; 
+        }
+        
+        a { 
+            color: #f59e0b; 
+            text-decoration: none; 
+        }
+        
+        a:hover { 
+            text-decoration: underline; 
+        }
+        
+        a:visited { 
+            color: #f59e0b; 
+        }
+        
+        .back { 
+            display: inline-block; 
+            margin-bottom: 2rem; 
+            font-size: 0.9rem;
+            color: #718096;
+        }
+        
+        .back:visited {
+            color: #718096;
+        }
+        
+        .back:hover {
+            color: #f59e0b;
+        }
+        
+        h1 { 
+            font-size: 2rem; 
+            margin-bottom: 0.5rem; 
+            color: #fff;
+            font-weight: 600;
+        }
+        
+        .tagline { 
+            color: #718096; 
+            margin-bottom: 2.5rem; 
+            font-size: 1.05rem; 
+        }
+        
+        /* Research Section */
         .research-section {
-            background: rgba(245, 158, 11, 0.1);
-            border-left: 4px solid #f59e0b;
+            background: rgba(245, 158, 11, 0.08);
+            border-left: 3px solid #f59e0b;
             padding: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             border-radius: 0 8px 8px 0;
         }
-        .research-section h2 { color: #f59e0b; font-size: 1.3rem; margin-bottom: 1rem; }
-        .killer-stat {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #ff6b6b;
-            text-align: center;
-            margin: 1rem 0;
-        }
-        .killer-stat-label {
-            text-align: center;
-            color: #888;
-            font-size: 0.95rem;
+        
+        .research-section h2 { 
+            color: #f59e0b; 
+            font-size: 1.15rem; 
             margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .research-section p {
+            color: #a0aec0;
+            margin-bottom: 0.75rem;
+        }
+        
+        .research-section p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .research-section strong {
+            color: #e8e8e8;
+        }
+        
+        .highlight-stat {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #f59e0b;
+            text-align: center;
+            margin: 1.25rem 0 0.5rem;
+        }
+        
+        .highlight-label {
+            text-align: center;
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 1.25rem;
         }
         
         /* Root Causes */
         .root-causes {
-            background: #141414;
-            border: 1px solid #333;
-            padding: 1.5rem;
+            background: #111;
+            border: 1px solid #252525;
+            padding: 1.25rem 1.5rem;
             border-radius: 8px;
-            margin: 1.5rem 0;
+            margin: 1.25rem 0;
         }
-        .root-causes h3 { color: #fff; margin-bottom: 1rem; font-size: 1.1rem; }
-        .root-causes ol { padding-left: 1.5rem; }
-        .root-causes li { margin-bottom: 0.5rem; color: #888; }
         
-        h2 { color: #fff; margin: 2rem 0 1rem; font-size: 1.4rem; }
-        h3 { color: #f59e0b; margin: 1.5rem 0 0.75rem; font-size: 1.1rem; }
-        ul { list-style: none; margin: 1rem 0; }
-        ul li { padding: 0.4rem 0; padding-left: 1.5rem; position: relative; }
-        ul li:before { content: "→"; position: absolute; left: 0; color: #f59e0b; }
+        .root-causes h3 { 
+            color: #e8e8e8; 
+            margin-bottom: 0.75rem; 
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .root-causes ol { 
+            padding-left: 1.25rem;
+            color: #a0aec0;
+        }
+        
+        .root-causes li { 
+            margin-bottom: 0.4rem;
+            font-size: 0.9rem;
+        }
+        
+        .root-causes strong {
+            color: #e8e8e8;
+        }
+        
+        h2 { 
+            color: #fff; 
+            margin: 2.5rem 0 1rem; 
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        h3 { 
+            color: #f59e0b; 
+            margin: 1.75rem 0 0.6rem; 
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+        
+        .section-intro {
+            color: #a0aec0;
+            margin-bottom: 0.75rem;
+        }
+        
+        ul { 
+            list-style: none; 
+            margin: 0.75rem 0 1.5rem; 
+        }
+        
+        ul li { 
+            padding: 0.35rem 0 0.35rem 1.25rem; 
+            position: relative;
+            color: #a0aec0;
+            font-size: 0.95rem;
+        }
+        
+        ul li:before { 
+            content: "→"; 
+            position: absolute; 
+            left: 0; 
+            color: #4a5568; 
+        }
         
         .stats {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin: 2rem 0;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
             text-align: center;
         }
-        .stat { background: #141414; border: 1px solid #333; padding: 1rem; border-radius: 8px; }
-        .stat-number { font-size: 1.8rem; font-weight: bold; color: #f59e0b; }
-        .stat-label { font-size: 0.8rem; color: #888; }
+        
+        .stat { 
+            background: #111; 
+            border: 1px solid #252525; 
+            padding: 1rem 0.5rem; 
+            border-radius: 8px; 
+        }
+        
+        .stat-number { 
+            font-size: 1.5rem; 
+            font-weight: 700; 
+            color: #f59e0b; 
+        }
+        
+        .stat-label { 
+            font-size: 0.75rem; 
+            color: #718096;
+            margin-top: 0.25rem;
+        }
+        
+        .background-section {
+            margin: 2rem 0;
+        }
+        
+        .background-section p {
+            color: #a0aec0;
+            margin-bottom: 0.75rem;
+        }
+        
+        .contact-section {
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid #252525;
+        }
+        
+        .contact-section h3 {
+            margin-top: 0;
+        }
+        
+        .contact-section p {
+            color: #718096;
+            margin-bottom: 1rem;
+        }
         
         .cta {
             background: #f59e0b;
             color: #0a0a0a;
-            padding: 1rem 2rem;
-            border-radius: 8px;
+            padding: 0.85rem 1.75rem;
+            border-radius: 6px;
             display: inline-block;
-            font-weight: bold;
-            margin-top: 2rem;
+            font-weight: 600;
+            font-size: 0.95rem;
         }
-        .cta:hover { background: #fbbf24; text-decoration: none; }
         
+        .cta:visited {
+            color: #0a0a0a;
+        }
+        
+        .cta:hover { 
+            background: #fbbf24; 
+            text-decoration: none; 
+        }
+        
+        .footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #1a1a1a;
+            text-align: center;
+            color: #3d4452;
+            font-size: 0.85rem;
+        }
+        
+        /* Mobile */
         @media (max-width: 600px) {
-            .stats { grid-template-columns: repeat(2, 1fr); }
-            .killer-stat { font-size: 2rem; }
+            body {
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            .stats { 
+                grid-template-columns: repeat(2, 1fr); 
+            }
+            
+            .highlight-stat { 
+                font-size: 1.75rem; 
+            }
+            
+            .root-causes {
+                padding: 1rem 1.25rem;
+            }
+            
+            .research-section {
+                padding: 1.25rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <a href="index.html" class="back">← Back</a>
+        <a href="index.html" class="back">← Stephen Nittler</a>
         
-        <h1>Consulting Services</h1>
-        <p class="tagline">Energy policy • Government affairs • Strategic advisory</p>
+        <h1>Consulting</h1>
+        <p class="tagline">Energy policy · Government affairs · Strategic advisory</p>
         
         <!-- Research Foundation -->
         <div class="research-section">
-            <h2>🎓 Research-Backed Expertise</h2>
-            <p>My Duke University research focused on <strong>why energy projects fail due to community opposition — and how to fix it.</strong></p>
+            <h2>Research-Backed Approach</h2>
+            <p>My Duke University research examined <strong>why energy projects fail due to community opposition—and what separates successful developers from failed ones.</strong></p>
             
-            <div class="killer-stat">Only 13%</div>
-            <p class="killer-stat-label">of projects stopped by organized opposition are ever completed</p>
-            
-            <p>I studied dozens of transmission and generation projects to identify the patterns that separate successful developers from failed ones.</p>
+            <div class="highlight-stat">Only 13%</div>
+            <p class="highlight-label">of projects stopped by organized opposition are ever completed</p>
             
             <div class="root-causes">
-                <h3>The 7 Root Causes of Project Failure</h3>
+                <h3>Common Failure Patterns</h3>
                 <ol>
-                    <li><strong>Late engagement</strong> — Communities learn about projects from opponents first</li>
+                    <li><strong>Late engagement</strong> — Communities hear from opponents first</li>
                     <li><strong>Benefits disconnect</strong> — Local costs, distant benefits</li>
                     <li><strong>Trust deficit</strong> — Developer credibility not established early</li>
-                    <li><strong>Information vacuum</strong> — Opponents fill the void with misinformation</li>
-                    <li><strong>Process blindness</strong> — Underestimating regulatory/political complexity</li>
+                    <li><strong>Information vacuum</strong> — Opponents control the narrative</li>
+                    <li><strong>Process blindness</strong> — Underestimating regulatory complexity</li>
                     <li><strong>Coalition gaps</strong> — No local champions to counter opposition</li>
-                    <li><strong>Escalation failures</strong> — Problems fester until they're crises</li>
+                    <li><strong>Escalation failures</strong> — Problems fester until they become crises</li>
                 </ol>
             </div>
             
-            <p>This research shapes every engagement — I know what kills projects before the first shovel hits the ground.</p>
+            <p>This research informs every engagement—identifying risks before they become project-ending problems.</p>
         </div>
         
-        <h2>How I Can Help</h2>
+        <h2>Services</h2>
         
         <h3>Transmission Development Strategy</h3>
-        <p>Navigate the complex landscape of interstate transmission projects. I've worked on multi-state high-voltage projects through every phase — from siting to regulatory approval.</p>
+        <p class="section-intro">Navigate interstate transmission projects from siting through regulatory approval.</p>
         <ul>
             <li>Route analysis and siting strategy</li>
             <li>State regulatory filings (CPCN, public convenience)</li>
@@ -135,8 +325,8 @@
             <li>Multi-state coordination</li>
         </ul>
         
-        <h3>Government Affairs & Advocacy</h3>
-        <p>Build and execute legislative strategies that move the needle. My background includes direct lobbying, coalition building, and working both sides of the aisle.</p>
+        <h3>Government Affairs</h3>
+        <p class="section-intro">Legislative and regulatory strategy from someone who's worked both sides.</p>
         <ul>
             <li>State legislative strategy</li>
             <li>Regulatory engagement (FERC, state PUCs)</li>
@@ -145,7 +335,7 @@
         </ul>
         
         <h3>Stakeholder Engagement</h3>
-        <p>Turn opponents into advocates. I've managed community relations for contentious infrastructure projects across the Midwest.</p>
+        <p class="section-intro">Community relations for contentious infrastructure projects.</p>
         <ul>
             <li>Community outreach strategy</li>
             <li>Landowner relations</li>
@@ -154,7 +344,7 @@
         </ul>
         
         <h3>Strategic Advisory</h3>
-        <p>Cut through the noise with clear-eyed analysis. Market entry, regulatory risk, competitive intelligence.</p>
+        <p class="section-intro">Market analysis, regulatory risk assessment, and competitive intelligence.</p>
         <ul>
             <li>Market entry analysis</li>
             <li>Policy impact assessment</li>
@@ -162,7 +352,7 @@
             <li>Competitive intelligence</li>
         </ul>
         
-        <h2>Track Record</h2>
+        <h2>Experience</h2>
         <div class="stats">
             <div class="stat">
                 <div class="stat-number">4+</div>
@@ -170,7 +360,7 @@
             </div>
             <div class="stat">
                 <div class="stat-number">10+</div>
-                <div class="stat-label">Years experience</div>
+                <div class="stat-label">Years</div>
             </div>
             <div class="stat">
                 <div class="stat-number">$1M+</div>
@@ -182,14 +372,21 @@
             </div>
         </div>
         
-        <h2>Background</h2>
-        <p>I spent three years at Invenergy as Senior Associate of Transmission Public Affairs, leading government affairs and stakeholder engagement for multi-state transmission projects.</p>
-        <p style="margin-top: 1rem;">Before that, I served as Chief of Staff in the Missouri Senate, worked as a government affairs professional at a Jefferson City lobbying firm, and managed political campaigns.</p>
-        <p style="margin-top: 1rem;">I hold a Master of Environmental Management from Duke University and a BA in Political Science from the University of Missouri.</p>
+        <div class="background-section">
+            <p>Three years at Invenergy as Senior Associate of Transmission Public Affairs, leading government affairs and stakeholder engagement for multi-state transmission projects including Grain Belt Express.</p>
+            <p>Previously served as Chief of Staff in the Missouri Senate, worked at a Jefferson City government affairs firm, and managed political campaigns.</p>
+            <p>Master of Environmental Management from Duke University. BA in Political Science from the University of Missouri.</p>
+        </div>
         
-        <h3>Let's Talk</h3>
-        <p>Available for project or retainer engagements.</p>
-        <a href="mailto:stephen.nittler@gmail.com" class="cta">Get in Touch</a>
+        <div class="contact-section">
+            <h3>Get in Touch</h3>
+            <p>Available for project-based or retainer engagements.</p>
+            <a href="mailto:stephen.nittler@gmail.com" class="cta">stephen.nittler@gmail.com</a>
+        </div>
+        
+        <div class="footer">
+            <p>© 2026 Stephen Nittler</p>
+        </div>
     </div>
 </body>
 </html>
