@@ -4,395 +4,197 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulting | Stephen Nittler</title>
-    <meta name="description" content="Energy policy consulting, government affairs, and strategic advisory services for transmission and infrastructure projects.">
+    <meta name="description" content="AI-powered intelligence tools for energy infrastructure. Regulatory monitoring, opposition tracking, and government affairs strategy from a practitioner with a decade in energy policy.">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         body {
             font-family: Georgia, 'Times New Roman', serif;
             background: #0a0a0a;
             color: #e8e8e8;
             min-height: 100vh;
             padding: 2rem;
-            line-height: 1.6;
+            line-height: 1.7;
         }
-        
-        .container { 
-            max-width: 720px; 
-            margin: 0 auto; 
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
         }
-        
-        a { 
-            color: #d97706; 
-            text-decoration: none; 
-        }
-        
-        a:hover { 
-            text-decoration: underline; 
-        }
-        
-        a:visited { 
-            color: #d97706; 
-        }
-        
-        .back { 
-            display: inline-block; 
-            margin-bottom: 2rem; 
+
+        a { color: #d97706; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        a:visited { color: #d97706; }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 2.5rem;
             font-size: 0.9rem;
             color: #718096;
         }
-        
-        .back:visited {
-            color: #718096;
-        }
-        
-        .back:hover {
-            color: #d97706;
-        }
-        
-        h1 { 
-            font-size: 2rem; 
-            margin-bottom: 0.5rem; 
+        .back:visited { color: #718096; }
+        .back:hover { color: #d97706; }
+
+        h1 {
+            font-size: 2rem;
             color: #fff;
             font-weight: 600;
+            margin-bottom: 0.5rem;
         }
-        
-        .tagline { 
-            color: #718096; 
-            margin-bottom: 2.5rem; 
-            font-size: 1.05rem; 
-        }
-        
-        /* Research Section */
-        .research-section {
-            background: rgba(245, 158, 11, 0.08);
-            border-left: 3px solid #d97706;
-            padding: 1.5rem;
-            margin-bottom: 2.5rem;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .research-section h2 { 
-            color: #d97706; 
-            font-size: 1.15rem; 
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-        
-        .research-section p {
-            color: #a0aec0;
-            margin-bottom: 0.75rem;
-        }
-        
-        .research-section p:last-child {
-            margin-bottom: 0;
-        }
-        
-        .research-section strong {
-            color: #e8e8e8;
-        }
-        
-        .highlight-stat {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #d97706;
-            text-align: center;
-            margin: 1.25rem 0 0.5rem;
-        }
-        
-        .highlight-label {
-            text-align: center;
+
+        .tagline {
             color: #718096;
-            font-size: 0.9rem;
-            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
         }
-        
-        /* Root Causes */
-        .root-causes {
+
+        h2 {
+            font-size: 1.2rem;
+            color: #d97706;
+            font-weight: 600;
+            margin: 2.5rem 0 1rem;
+        }
+
+        p {
+            color: #a0aec0;
+            margin-bottom: 1.1rem;
+            font-size: 1rem;
+        }
+
+        p strong { color: #e8e8e8; }
+
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.25rem 0 2rem;
+        }
+
+        .card {
             background: #111;
             border: 1px solid #252525;
-            padding: 1.25rem 1.5rem;
-            border-radius: 8px;
-            margin: 1.25rem 0;
+            padding: 1.25rem;
         }
-        
-        .root-causes h3 { 
-            color: #e8e8e8; 
-            margin-bottom: 0.75rem; 
-            font-size: 1rem;
-            font-weight: 600;
-        }
-        
-        .root-causes ol { 
-            padding-left: 1.25rem;
-            color: #a0aec0;
-        }
-        
-        .root-causes li { 
-            margin-bottom: 0.4rem;
+
+        .card-title {
             font-size: 0.9rem;
-        }
-        
-        .root-causes strong {
+            font-weight: 600;
             color: #e8e8e8;
+            margin-bottom: 0.5rem;
         }
-        
-        h2 { 
-            color: #fff; 
-            margin: 2.5rem 0 1rem; 
-            font-size: 1.3rem;
-            font-weight: 600;
+
+        .card p {
+            font-size: 0.875rem;
+            color: #718096;
+            margin-bottom: 0;
         }
-        
-        h3 { 
-            color: #d97706; 
-            margin: 1.75rem 0 0.6rem; 
-            font-size: 1.05rem;
-            font-weight: 600;
+
+        .proof-list {
+            list-style: none;
+            margin: 1rem 0 2rem;
         }
-        
-        .section-intro {
-            color: #a0aec0;
-            margin-bottom: 0.75rem;
-        }
-        
-        ul { 
-            list-style: none; 
-            margin: 0.75rem 0 1.5rem; 
-        }
-        
-        ul li { 
-            padding: 0.35rem 0 0.35rem 1.25rem; 
-            position: relative;
+
+        .proof-list li {
+            padding: 0.9rem 0;
+            border-bottom: 1px solid #1a1a1a;
             color: #a0aec0;
             font-size: 0.95rem;
         }
-        
-        ul li:before { 
-            content: "→"; 
-            position: absolute; 
-            left: 0; 
-            color: #4a5568; 
-        }
-        
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 0.75rem;
-            margin: 1.5rem 0;
+
+        .proof-list li:last-child { border-bottom: none; }
+
+        .proof-list strong { color: #e8e8e8; }
+
+        .proof-list a { color: #d97706; }
+
+        .contact-block {
+            background: #111;
+            border: 1px solid #252525;
+            padding: 2rem;
+            margin-top: 2.5rem;
             text-align: center;
         }
-        
-        .stat { 
-            background: #111; 
-            border: 1px solid #252525; 
-            padding: 1rem 0.5rem; 
-            border-radius: 8px; 
+
+        .contact-block p {
+            margin-bottom: 1.25rem;
         }
-        
-        .stat-number { 
-            font-size: 1.5rem; 
-            font-weight: 700; 
-            color: #d97706; 
-        }
-        
-        .stat-label { 
-            font-size: 0.75rem; 
-            color: #718096;
-            margin-top: 0.25rem;
-        }
-        
-        .background-section {
-            margin: 2rem 0;
-        }
-        
-        .background-section p {
-            color: #a0aec0;
-            margin-bottom: 0.75rem;
-        }
-        
-        .contact-section {
-            margin-top: 2.5rem;
-            padding-top: 2rem;
-            border-top: 1px solid #252525;
-        }
-        
-        .contact-section h3 {
-            margin-top: 0;
-        }
-        
-        .contact-section p {
-            color: #718096;
-            margin-bottom: 1rem;
-        }
-        
+
         .cta {
             background: #d97706;
             color: #0a0a0a;
             padding: 0.85rem 1.75rem;
-            border-radius: 6px;
             display: inline-block;
             font-weight: 600;
             font-size: 0.95rem;
+            font-family: Georgia, serif;
         }
-        
-        .cta:visited {
-            color: #0a0a0a;
-        }
-        
-        .cta:hover { 
-            background: #fbbf24; 
-            text-decoration: none; 
-        }
-        
+
+        .cta:visited { color: #0a0a0a; }
+        .cta:hover { background: #e6a817; text-decoration: none; }
+
         .footer {
             margin-top: 3rem;
             padding-top: 1.5rem;
             border-top: 1px solid #1a1a1a;
-            text-align: center;
             color: #3d4452;
             font-size: 0.85rem;
         }
-        
-        /* Mobile */
+
         @media (max-width: 600px) {
-            body {
-                padding: 1.5rem;
-            }
-            
-            h1 {
-                font-size: 1.75rem;
-            }
-            
-            .stats { 
-                grid-template-columns: repeat(2, 1fr); 
-            }
-            
-            .highlight-stat { 
-                font-size: 1.75rem; 
-            }
-            
-            .root-causes {
-                padding: 1rem 1.25rem;
-            }
-            
-            .research-section {
-                padding: 1.25rem;
-            }
+            .cards { grid-template-columns: 1fr; }
+            h1 { font-size: 1.75rem; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <a href="index.html" class="back">← Stephen Nittler</a>
-        
+
         <h1>Consulting</h1>
-        <p class="tagline">Energy policy · Government affairs · Strategic advisory</p>
-        
-        <!-- Research Foundation -->
-        <div class="research-section">
-            <h2>Research-Backed Approach</h2>
-            <p>My Duke research studied <strong>why energy projects fail due to community opposition, and what separates the ones that survive from the ones that don't.</strong> I now track 78 scored projects and 48 legislative actions in a scored database with documented outcomes.</p>
-            
-            <div class="highlight-stat">Only 13%</div>
-            <p class="highlight-label">of projects stopped by organized opposition are ever completed</p>
-            
-            <div class="root-causes">
-                <h3>Common Failure Patterns</h3>
-                <ol>
-                    <li><strong>Late engagement:</strong> Communities hear from opponents first</li>
-                    <li><strong>Benefits disconnect:</strong> Local costs, distant benefits</li>
-                    <li><strong>Trust deficit:</strong> Developer credibility not established early</li>
-                    <li><strong>Information vacuum:</strong> Opponents control the narrative</li>
-                    <li><strong>Process blindness:</strong> Underestimating regulatory complexity</li>
-                    <li><strong>Coalition gaps:</strong> No local champions to counter opposition</li>
-                    <li><strong>Escalation failures:</strong> Problems fester until they become crises</li>
-                </ol>
+        <p class="tagline">Energy policy and AI-powered intelligence tools for infrastructure.</p>
+
+        <p>I spent a decade inside energy policy: Chief of Staff in the Missouri Senate, four years as a registered lobbyist on energy and tech, and three years managing government affairs and community relations for a multi-state HVDC transmission project with a $2M+ annual public affairs budget.</p>
+
+        <p>In 2025, I started building AI tools to solve problems I understood from the inside. Regulatory monitoring that would have taken a team hours per week. Opposition tracking that flags risk before it becomes a headline. Daily intelligence pipelines that do the research work automatically.</p>
+
+        <p>Those tools now run in production. They power <a href="https://thedailymine.co">The Daily Mine</a>, a daily energy newsletter, and a <a href="https://thedailymine.co/opposition-tracker">live opposition database</a> covering 78 scored data center and transmission projects across the US.</p>
+
+        <h2>What I work on</h2>
+
+        <div class="cards">
+            <div class="card">
+                <div class="card-title">Regulatory intelligence</div>
+                <p>Automated FERC, state PUC, and local docket monitoring. Relevant actions flagged daily. Built for teams that can't afford to miss a filing.</p>
             </div>
-            
-            <p>This research informs every engagement—identifying risks before they become project-ending problems.</p>
-        </div>
-        
-        <h2>Services</h2>
-        
-        <h3>Transmission Development Strategy</h3>
-        <p class="section-intro">Navigate interstate transmission projects from siting through regulatory approval.</p>
-        <ul>
-            <li>Route analysis and siting strategy</li>
-            <li>State regulatory filings (CPCN, public convenience)</li>
-            <li>RTO interconnection processes</li>
-            <li>Multi-state coordination</li>
-        </ul>
-        
-        <h3>Government Affairs</h3>
-        <p class="section-intro">Legislative and regulatory strategy from someone who's worked both sides.</p>
-        <ul>
-            <li>State legislative strategy</li>
-            <li>Regulatory engagement (FERC, state PUCs)</li>
-            <li>Coalition development</li>
-            <li>Political landscape analysis</li>
-        </ul>
-        
-        <h3>Stakeholder Engagement</h3>
-        <p class="section-intro">Community relations for contentious infrastructure projects.</p>
-        <ul>
-            <li>Community outreach strategy</li>
-            <li>Landowner relations</li>
-            <li>Public meeting facilitation</li>
-            <li>Opposition research and response</li>
-        </ul>
-        
-        <h3>Opposition Intelligence</h3>
-        <p class="section-intro">The same database I use to publish The Daily Mine, applied to your project.</p>
-        <ul>
-            <li>Opposition risk scoring (78 scored projects, 48 legislative actions tracked)</li>
-            <li>Community sentiment analysis before you file</li>
-            <li>Counter-strategy recommendations based on documented outcomes</li>
-            <li>Monitoring for legislative and regulatory threats</li>
-        </ul>
-        
-        <h3>Strategic Advisory</h3>
-        <p class="section-intro">Market analysis, regulatory risk assessment, and competitive intelligence.</p>
-        <ul>
-            <li>Market entry analysis</li>
-            <li>Policy impact assessment</li>
-            <li>Regulatory risk evaluation</li>
-            <li>Competitive intelligence</li>
-        </ul>
-        
-        <h2>Experience</h2>
-        <div class="stats">
-            <div class="stat">
-                <div class="stat-number">4+</div>
-                <div class="stat-label">States</div>
+            <div class="card">
+                <div class="card-title">Opposition tracking</div>
+                <p>78-project database with predictive risk scoring, updated daily by AI. Know which projects face serious resistance before it goes public.</p>
             </div>
-            <div class="stat">
-                <div class="stat-number">10+</div>
-                <div class="stat-label">Years</div>
+            <div class="card">
+                <div class="card-title">Government affairs strategy</div>
+                <p>State legislative strategy, coalition development, and regulatory engagement from someone who has worked both sides of the table.</p>
             </div>
-            <div class="stat">
-                <div class="stat-number">$2M+</div>
-                <div class="stat-label">Budget managed</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">4+</div>
-                <div class="stat-label">Sectors</div>
+            <div class="card">
+                <div class="card-title">Intelligence pipelines</div>
+                <p>End-to-end research and monitoring workflows built on Claude. From source scanning to structured daily briefs, automated and auditable.</p>
             </div>
         </div>
-        
-        <div class="background-section">
-            <p>Three years at Invenergy as Senior Associate, Transmission Public Affairs. Managed stakeholder engagement and community relations for multi-state HVDC transmission development across four states.</p>
-            <p>Previously served as Chief of Staff in the Missouri Senate, worked at a Jefferson City government affairs firm, and managed political campaigns.</p>
-            <p>Master of Environmental Management from Duke University. BA in Political Science from the University of Missouri.</p>
-        </div>
-        
-        <div class="contact-section">
-            <h3>Get in Touch</h3>
-            <p>Available for project-based or retainer engagements.</p>
+
+        <h2>Proof of work</h2>
+
+        <ul class="proof-list">
+            <li><strong>The Daily Mine</strong>. Daily energy newsletter. Research pipeline runs automatically at 5:30 AM. Human review and send in under 20 minutes. <a href="https://thedailymine.co">thedailymine.co</a></li>
+            <li><strong>Opposition Tracker</strong>. 78 data center and transmission projects scored for opposition risk, updated daily. First auto-scored call correctly flagged Frederick County, MD to HIGH risk before the story broke publicly. <a href="https://thedailymine.co/opposition-tracker">thedailymine.co/opposition-tracker</a></li>
+            <li><strong>Passed Missouri's 2022 Solar Act</strong> (SB 745), upheld unanimously by the state Supreme Court. Secured data center tax incentives across two legislative sessions.</li>
+            <li><strong>Three years, multi-state HVDC transmission</strong>. Managed stakeholder engagement and community relations across four states. $2M+ public affairs budget. DOE EIS coordination, regulatory hearings, landowner relations at scale.</li>
+        </ul>
+
+        <div class="contact-block">
+            <p>Available for project-based or retainer engagements. Offering a limited number of free 30-day pilots for energy organizations that want to see what automated regulatory and opposition intelligence looks like in practice.</p>
             <a href="mailto:stephen@thedailymine.co" class="cta">stephen@thedailymine.co</a>
         </div>
-        
+
         <div class="footer">
             <p>© 2026 Stephen Nittler</p>
         </div>
