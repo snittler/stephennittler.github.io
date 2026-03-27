@@ -128,7 +128,7 @@
 
         <div class="post-body">
 
-            <p>In early February I started setting up OpenClaw — an AI agent framework that runs persistently on your machine and can be connected to tools, scheduled jobs, and messaging channels. The pitch is that you can configure an agent that does useful autonomous work: monitoring things, drafting things, running pipelines.</p>
+            <p>In early February I started setting up OpenClaw, an AI agent framework that runs persistently on your machine and can be connected to tools, scheduled jobs, and messaging channels. The pitch is that you can configure an agent that does useful autonomous work: monitoring things, drafting things, running pipelines.</p>
 
             <p>I had a specific use case. I publish <a href="https://thedailymine.co">The Daily Mine</a>, a daily newsletter covering energy infrastructure, data centers, and power grid politics. The research side of that is tedious: scanning 40-plus RSS feeds, checking a handful of specific sources, filtering for stories that actually matter, then organizing them into categories. It was taking 90 minutes a day. I wanted to automate it.</p>
 
@@ -138,7 +138,7 @@
 
             <p>I expected configuration. Set up the agent, point it at some feeds, tell it what to look for, done. I had used Claude through the API enough to know it could read and classify text reliably. The logic seemed straightforward.</p>
 
-            <p>What I underestimated was the infrastructure layer. OpenClaw is not a simple wrapper. It is a persistent process with its own scheduling system, session management, authentication, and a gateway that handles communication between the agent and external tools. Getting that infrastructure right — before you write a single prompt — takes longer than the documentation suggests.</p>
+            <p>What I underestimated was the infrastructure layer. OpenClaw is not a simple wrapper. It is a persistent process with its own scheduling system, session management, authentication, and a gateway that handles communication between the agent and external tools. Getting that infrastructure right, before you write a single prompt, takes longer than the documentation suggests.</p>
 
             <h2>The first three weeks</h2>
 
@@ -152,23 +152,23 @@
 
             <p>Once the infrastructure was stable, the research pipeline came together quickly. The agent runs on a cron schedule, pulls from about 60 RSS feeds including some Google News topic aggregations I set up for local opposition stories, does several targeted web searches, deduplicates against the last five newsletters, and writes a structured research file with story candidates grouped by category.</p>
 
-            <p>The classification quality is good. I gave it specific guidance on what I care about — US-only stories, opposition and moratorium actions at the county level, FERC and state PUC filings, data center announcements — and it applies that filter reliably. The stories it surfaces are the stories I would have found manually. It occasionally misses something, but so did I.</p>
+            <p>The classification quality is good. I gave it specific guidance on what I care about: US-only stories, opposition and moratorium actions at the county level, FERC and state PUC filings, data center announcements. It applies that filter reliably. The stories it surfaces are the stories I would have found manually. It occasionally misses something, but so did I.</p>
 
             <p>The more interesting result was the opposition tracking. I run a separate database of 78 scored data center and transmission projects. The agent monitors daily news, classifies signal strength for each story (strong negative, moderate negative, neutral, positive), and adjusts project risk scores automatically. In the first week of running it, it flagged a Frederick County, Maryland referendum story and auto-bumped the project to HIGH risk. That was the right call, and I would have caught it manually, but later.</p>
 
             <h2>What I am still figuring out</h2>
 
-            <p>Context management. When an agent session runs for weeks, the conversation history grows. Claude has a context window limit, and when you hit compaction — where old context gets summarized to make room — things can go wrong if the history contains content types that do not survive the process. I learned this when a session with extended-thinking blocks got compacted and the API rejected the modified history on the next call. The fix was a fresh session. The lesson was to watch context growth actively and not let sessions run too long without pruning.</p>
+            <p>Context management. When an agent session runs for weeks, the conversation history grows. Claude has a context window limit, and when you hit compaction, where old context gets summarized to make room, and things can go wrong if the history contains content types that do not survive the process. I learned this when a session with extended-thinking blocks got compacted and the API rejected the modified history on the next call. The fix was a fresh session. The lesson was to watch context growth actively and not let sessions run too long without pruning.</p>
 
             <p>The other thing I am still figuring out is the right level of autonomy. The agent has access to a lot of tools: file system, web search, the ability to run shell commands, send messages. That is appropriate for an automated pipeline where I have defined the task carefully. It is less appropriate for open-ended work where the agent might decide to do something I did not anticipate. I have gotten better at scoping tasks tightly and reviewing outputs before they go anywhere external.</p>
 
             <h2>The honest summary</h2>
 
-            <p>The pipeline works. Research that took 90 minutes now takes me 15 — I review the draft, make edits, and send. The time I saved in six weeks is already worth the time I spent building it.</p>
+            <p>The pipeline works. Research that took 90 minutes now takes me 15. I review the draft, make edits, and send. The time I saved in six weeks is already worth the time I spent building it.</p>
 
             <p>But the value did not come from the AI doing something magical. It came from me knowing exactly what I needed, having enough domain knowledge to write good classification prompts, and being willing to debug the infrastructure until it was stable. A generalist picking up the same tools without that context would have a harder time getting to the same place.</p>
 
-            <p>That gap — between what AI tools can do and what most people can actually get them to do reliably — is real. It is not a permanent gap. But right now it exists, and it is where most of the interesting work is happening.</p>
+            <p>That gap between what AI tools can do and what most people can actually get them to do reliably is real. It is not a permanent gap. But right now it exists, and it is where most of the interesting work is happening.</p>
 
             <hr class="divider">
 
