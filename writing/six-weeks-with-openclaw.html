@@ -156,11 +156,11 @@
 
             <p>The classification quality is good. I gave it specific guidance on what I care about: US-only stories, opposition and moratorium actions at the county level, FERC and state PUC filings, data center announcements. It applies that filter reliably. The stories it surfaces are the stories I would have found manually. It occasionally misses something, but so did I.</p>
 
-            <p>The more interesting result was the opposition tracking. I run a separate database of 78 scored data center and transmission projects. The agent monitors daily news, classifies signal strength for each story (strong negative, moderate negative, neutral, positive), and adjusts project risk scores automatically. In the first week of running it, it flagged a Frederick County, Maryland referendum story and auto-bumped the project to HIGH risk. That was the right call, and I would have caught it manually, but later.</p>
+            <p>The more interesting result was the opposition tracking. I run a separate database of 78 scored data center and transmission projects. The agent monitors daily news, classifies signal strength for each story, and adjusts project risk scores automatically. The system has been running long enough now that I trust its judgment on what matters.</p>
 
             <h2>What I am still figuring out</h2>
 
-            <p>Context management. When an agent session runs for weeks, the conversation history grows. Claude has a context window limit, and when you hit compaction, where old context gets summarized to make room, and things can go wrong if the history contains content types that do not survive the process. I learned this when a session with extended-thinking blocks got compacted and the API rejected the modified history on the next call. The fix was a fresh session. The lesson was to watch context growth actively and not let sessions run too long without pruning.</p>
+            <p>Context management. When an agent session runs for weeks, the conversation history grows. Claude has a context window limit, and when you hit compaction, where old context gets summarized to make room, things can go wrong if the history contains content types that do not survive the process. I learned this when a session with extended-thinking blocks got compacted and the API rejected the modified history on the next call. The fix was a fresh session. The lesson was to watch context growth actively and not let sessions run too long without pruning.</p>
 
             <p>The other thing I am still figuring out is the right level of autonomy. The agent has access to a lot of tools: file system, web search, the ability to run shell commands, send messages. That is appropriate for an automated pipeline where I have defined the task carefully. It is less appropriate for open-ended work where the agent might decide to do something I did not anticipate. I have gotten better at scoping tasks tightly and reviewing outputs before they go anywhere external.</p>
 
@@ -170,7 +170,7 @@
 
             <p>But the value did not come from the AI doing something magical. It came from me knowing exactly what I needed, having enough domain knowledge to write good classification prompts, and being willing to debug the infrastructure until it was stable. A generalist picking up the same tools without that context would have a harder time getting to the same place.</p>
 
-            <p>That gap between what AI tools can do and what most people can actually get them to do reliably is real. It is not a permanent gap. But right now it exists, and it is where most of the interesting work is happening.</p>
+            <p>That gap between what AI tools can do and what most people can actually get them to do reliably is real. It is not a permanent gap. But right now it is where the advantage is, and it belongs to whoever is willing to do the infrastructure work.</p>
 
             <hr class="divider">
 
