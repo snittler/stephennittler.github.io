@@ -40,7 +40,8 @@
             height: 140px;
             border-radius: 50%;
             margin-bottom: 1.75rem;
-            border: 2px solid #d97706;
+            border: 3px solid #d97706;
+            box-shadow: 0 0 0 1px rgba(217, 119, 6, 0.18);
             object-fit: cover;
         }
 
@@ -58,8 +59,18 @@
             color: #d97706;
             font-size: 0.9rem;
             margin-bottom: 1.75rem;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 0.02em;
+        }
+
+        .section-label {
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+            color: #d97706;
+            font-size: 0.78rem;
+            margin-bottom: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            font-weight: 700;
         }
 
         .bio {
@@ -74,17 +85,10 @@
         }
 
         .current {
+            width: min(760px, calc(100vw - 3rem));
+            margin-left: 50%;
             margin-bottom: 2.25rem;
-        }
-
-        .current h3 {
-            font-family: 'IBM Plex Mono', 'Courier New', monospace;
-            color: #d97706;
-            font-size: 0.78rem;
-            margin-bottom: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.4px;
-            font-weight: 700;
+            transform: translateX(-50%);
         }
 
         .project {
@@ -143,15 +147,23 @@
             text-decoration: none;
             font-size: 0.78rem;
             font-weight: 600;
-            transition: background 0.2s ease;
+            border: 1px solid rgba(217, 119, 6, 0.24);
+            transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.18s ease;
         }
 
         .links a:hover {
-            background: rgba(217, 119, 6, 0.24);
+            background: #d97706;
+            border-color: #d97706;
+            color: #1a1a1a;
+            transform: translateY(-1px);
         }
 
         .links a:visited {
             color: #d97706;
+        }
+
+        .links a:hover:visited {
+            color: #1a1a1a;
         }
 
         .footer {
@@ -209,12 +221,13 @@
         <h1>Stephen Nittler</h1>
         <p class="tagline">Energy policy. Regulatory strategy. Government affairs.</p>
 
+        <div class="section-label">About</div>
         <p class="bio">
             I help energy and infrastructure projects manage the stakeholder, political, and regulatory dynamics that decide whether they get built. A decade in state and federal energy policy, spanning lobbying, campaigns, and multi-state HVDC transmission, taught me that the technical case is rarely what kills a project. My Duke research studied why transmission projects fail and what helps them get built. The Daily Mine grew out of that work.
         </p>
 
         <div class="current">
-            <h3>Currently Building</h3>
+            <h3 class="section-label">Currently Building</h3>
             <div class="project">
                 <a href="https://thedailymine.co">The Daily Mine</a>
                 <p class="mine-tagline">Energy news. No spin.</p>
