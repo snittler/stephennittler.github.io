@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stephen Nittler</title>
-    <meta name="description" content="Stephen Nittler. Energy policy, transmission, data centers, and infrastructure intelligence. Founder of The Daily Mine.">
+    <meta name="description" content="Stephen Nittler. Energy policy, regulatory strategy, and government affairs. Editor of The Daily Mine.">
+    <meta property="og:title" content="Stephen Nittler">
+    <meta property="og:description" content="Stephen Nittler. Energy policy, regulatory strategy, and government affairs. Editor of The Daily Mine.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://stephennittler.com">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:description" content="Stephen Nittler. Energy policy, regulatory strategy, and government affairs. Editor of The Daily Mine.">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&amp;display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         body {
-            font-family: Georgia, 'Times New Roman', serif;
-            background: #0a0a0a;
-            color: #e8e8e8;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #1a1a1a;
+            color: #f5f5f0;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -20,155 +29,173 @@
             padding: 2rem;
             line-height: 1.6;
         }
-        
-        .container { 
-            max-width: 600px; 
-            text-align: center; 
+
+        .container {
+            max-width: 660px;
+            text-align: center;
         }
-        
+
         .headshot {
             width: 140px;
             height: 140px;
             border-radius: 50%;
-            margin-bottom: 1.5rem;
-            border: 3px solid #d97706;
+            margin-bottom: 1.75rem;
+            border: 2px solid #d97706;
             object-fit: cover;
         }
-        
-        h1 { 
-            font-size: 2rem; 
-            margin-bottom: 0.5rem; 
-            color: #fff;
+
+        h1 {
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 2.35rem;
+            margin-bottom: 0.5rem;
+            color: #fffaf0;
             font-weight: 600;
+            letter-spacing: 0;
         }
-        
-        .tagline { 
-            color: #d97706; 
-            font-size: 1.1rem; 
-            margin-bottom: 1.5rem;
-            font-weight: 500;
+
+        .tagline {
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+            color: #d97706;
+            font-size: 0.9rem;
+            margin-bottom: 1.75rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
         }
-        
-        .bio { 
-            color: #a0aec0; 
-            margin-bottom: 2rem; 
-            font-size: 1rem;
+
+        .bio {
+            color: #d8d8d2;
+            margin-bottom: 2.25rem;
+            font-size: 1.02rem;
             line-height: 1.75;
         }
-        
-        .bio strong { 
-            color: #e8e8e8; 
+
+        .bio strong {
+            color: #e8e8e8;
         }
-        
-        .current { 
-            margin-bottom: 2rem; 
+
+        .current {
+            margin-bottom: 2.25rem;
         }
-        
-        .current h3 { 
-            color: #666; 
-            font-size: 0.85rem; 
-            margin-bottom: 0.75rem; 
-            text-transform: uppercase; 
-            letter-spacing: 1.5px;
-            font-weight: 500;
+
+        .current h3 {
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+            color: #d97706;
+            font-size: 0.78rem;
+            margin-bottom: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            font-weight: 700;
         }
-        
+
         .project {
-            background: #141414;
-            border: 1px solid #252525;
-            padding: 1.25rem 1.5rem;
-            border-radius: 8px;
+            background: #202020;
+            border: 1px solid rgba(217, 119, 6, 0.36);
+            border-top: 3px solid #d97706;
+            padding: 1.5rem 1.75rem;
+            border-radius: 6px;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
         }
-        
-        .project a { 
-            color: #d97706; 
-            font-weight: 600; 
-            text-decoration: none; 
-            font-size: 1.1rem; 
+
+        .project a {
+            font-family: Georgia, 'Times New Roman', serif;
+            color: #d97706;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.35rem;
         }
-        
-        .project a:hover { 
-            text-decoration: underline; 
+
+        .project a:hover {
+            text-decoration: underline;
         }
-        
-        .project a:visited { 
-            color: #d97706; 
+
+        .project a:visited {
+            color: #d97706;
         }
-        
-        .project p { 
-            color: #718096; 
-            font-size: 0.9rem; 
-            margin-top: 0.35rem; 
+
+        .project p {
+            color: #c9c9c2;
+            font-size: 0.96rem;
+            margin-top: 0.55rem;
         }
-        
-        .links { 
-            display: flex; 
-            flex-wrap: wrap; 
-            gap: 0.6rem; 
-            justify-content: center; 
-            margin-bottom: 2.5rem; 
+
+        .project .mine-tagline {
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+            color: #fffaf0;
+            font-size: 0.82rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
         }
-        
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+            justify-content: center;
+            margin-bottom: 1.75rem;
+        }
+
         .links a {
-            background: rgba(245, 158, 11, 0.12);
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+            background: rgba(217, 119, 6, 0.12);
             color: #d97706;
             padding: 0.6rem 1rem;
             border-radius: 6px;
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
+            font-size: 0.78rem;
+            font-weight: 600;
             transition: background 0.2s ease;
         }
-        
-        .links a:hover { 
-            background: rgba(245, 158, 11, 0.25); 
+
+        .links a:hover {
+            background: rgba(217, 119, 6, 0.24);
         }
-        
-        .links a:visited { 
-            color: #d97706; 
+
+        .links a:visited {
+            color: #d97706;
         }
-        
-        .footer { 
-            color: #4a5568; 
-            font-size: 0.85rem; 
+
+        .footer {
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
+            color: #74746d;
+            font-size: 0.78rem;
         }
-        
-        .footer p { 
-            margin: 0.3rem 0; 
+
+        .footer p {
+            margin: 0.3rem 0;
         }
-        
+
         .footer .copyright {
             margin-top: 1.25rem;
             color: #3d4452;
         }
-        
+
         /* Mobile adjustments */
         @media (max-width: 600px) {
             body {
                 padding: 1.5rem;
             }
-            
+
             h1 {
-                font-size: 1.75rem;
+                font-size: 1.95rem;
             }
-            
+
             .tagline {
                 font-size: 1rem;
             }
-            
+
             .bio {
                 font-size: 0.95rem;
             }
-            
+
             .links {
                 gap: 0.5rem;
             }
-            
+
             .links a {
                 padding: 0.5rem 0.85rem;
                 font-size: 0.85rem;
             }
-            
+
             .headshot {
                 width: 120px;
                 height: 120px;
@@ -180,47 +207,28 @@
     <div class="container">
         <img src="headshot-enhanced-512.jpeg" alt="Stephen Nittler" class="headshot">
         <h1>Stephen Nittler</h1>
-        <p class="tagline">Energy policy. Infrastructure intelligence. Government affairs.</p>
-        
+        <p class="tagline">Energy policy. Regulatory strategy. Government affairs.</p>
+
         <p class="bio">
-            A decade in government and energy policy — from the Missouri Senate floor to multi-state transmission permitting — taught me that good projects fail when they can't manage stakeholders. My Duke research studied why; three years on an HVDC transmission project showed me how it plays out at scale, and how power infrastructure now collides with data center demand. The Daily Mine grew out of that work.
+            I help energy and infrastructure projects manage the stakeholder, political, and regulatory dynamics that decide whether they get built. A decade in state and federal energy policy, spanning lobbying, campaigns, and multi-state HVDC transmission, taught me that the technical case is rarely what kills a project. My Duke research studied why transmission projects fail and what helps them get built. The Daily Mine grew out of that work.
         </p>
-        
+
         <div class="current">
             <h3>Currently Building</h3>
             <div class="project">
-                <a href="https://thedailymine.co">⛏️ The Daily Mine</a>
-                <p>Daily energy and infrastructure intelligence. Power grids, data centers, transmission, and the politics shaping where projects get built.</p>
+                <a href="https://thedailymine.co">The Daily Mine</a>
+                <p class="mine-tagline">Energy news. No spin.</p>
+                <p>Daily coverage of data centers, power grids, transmission, and the politics shaping energy infrastructure.</p>
             </div>
         </div>
 
-        <div class="current">
-            <h3>Experience</h3>
-            <div class="project">
-                <a href="https://thedailymine.co">Founder, The Daily Mine</a>
-                <p>Independent daily newsletter. National coverage.</p>
-            </div>
-            <div class="project" style="margin-top: 0.75rem;">
-                <span style="color:#d97706; font-weight:600;">Senior Associate, Transmission Public Affairs — Invenergy</span>
-                <p>Stakeholder engagement and community relations for a multi-state HVDC project. Federal permitting coordination. Data center development monitoring and transmission offtake research.</p>
-            </div>
-            <div class="project" style="margin-top: 0.75rem;">
-                <span style="color:#d97706; font-weight:600;">Registered Contract Lobbyist</span>
-                <p>Passed Missouri's 2022 Solar Act (SB 745). Secured developer tax incentives. Managed 8–12 client engagements per legislative session in technology, energy, and utility sectors.</p>
-            </div>
-            <div class="project" style="margin-top: 0.75rem;">
-                <span style="color:#d97706; font-weight:600;">Chief of Staff, Missouri Senate</span>
-                <p>Legislative strategy and bill negotiation. Energy and utility policy. Joint Committee on Administrative Rules support.</p>
-            </div>
-        </div>
-        
         <div class="links">
             <a href="https://thedailymine.co">The Daily Mine</a>
             <a href="https://www.linkedin.com/in/stephen-nittler/">LinkedIn</a>
             <a href="https://x.com/StephenNittler">@StephenNittler</a>
             <a href="mailto:stephen@thedailymine.co">Contact</a>
         </div>
-        
+
         <div class="footer">
             <p class="copyright">© 2026</p>
         </div>
